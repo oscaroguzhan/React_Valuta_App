@@ -1,14 +1,21 @@
 import React from 'react'
 
-const CurrencyRow = () => {
+const CurrencyRow = (props) => {
+    // destructure props 
+    const {
+        currencyOptions
+    } = props;
     return (
         <main>
         
             <input type="number" className='input'/>
             <select className='select'>
-                <option value="Hi">
-                    Hi
+            {currencyOptions.map(option => (
+                <option key= {option} value={option}>
+                   {option}
                 </option>
+            ))}
+                
             </select>
         </main>
     )
